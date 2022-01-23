@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">HomeWorkOne</string>
     <string name="push">Push</string>
+    <string name="second">Второе задание</string>
+    <string name="first">К первому заданию</string>
+    <string name="Test">Макет в макете</string>
+    <string name="First">Первое задание</string>
+    <string name="Second">Второе задание</string>
 </resources>
