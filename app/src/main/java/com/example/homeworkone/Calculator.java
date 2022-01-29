@@ -3,65 +3,80 @@ package com.example.homeworkone;
 import java.io.Serializable;
 
 public class Calculator implements Serializable {
+    private String str_count="";
     private int count;
-    private int zero = 0;
-    private int one = 1;
-    private int two = 2;
-    private int three = 3;
-    private int four = 4;
-    private int five = 5;
-    private int six = 6;
-    private int seven = 7;
-    private int eight = 8;
-    private int nine = 9;
+    private int q;
 
-    public int getZero() {
-        count=zero;
+
+
+    private String zero = "0";
+    private String one = "1";
+
+
+
+    private String two = "2";
+    private String three = "3";
+    private String four = "4";
+    private String five = "5";
+    private String six = "6";
+    private String seven = "7";
+    private String eight = "8";
+    private String nine = "9";
+
+
+    public String getStr_count() {
+        return str_count;
+    }
+
+    public void setStr_count(String str_count) {
+        this.str_count = str_count;
+    }
+
+    public int getQ() {
+        return q;
+    }
+
+    public void setQ(int q) {
+        this.q = q;
+    }
+
+    public String getZero() {
         return zero;
     }
 
-    public int getOne() {
-        count=one;
+    public String getOne() {
         return one;
     }
 
-    public int getTwo() {
-        count=two;
+    public String getTwo() {
         return two;
     }
 
-    public int getThree() {
-        count=three;
+    public String getThree() {
         return three;
     }
 
-    public int getFour() {
-        count=four;
+    public String getFour() {
         return four;
     }
 
-    public int getFive() {
-        count=five;
+    public String getFive() {
         return five;
     }
 
-    public int getSix() {
-        count=six;
+    public String getSix() {
         return six;
     }
 
-    public int getSeven() {
-        count=seven;
+    public String getSeven() {
         return seven;
     }
 
-    public int getEight() {
-        count=eight;
+    public String getEight() {
         return eight;
     }
 
-    public int getNine() {
-        count=nine;
+    public String getNine() {
         return nine;
     }
 
@@ -69,11 +84,26 @@ public class Calculator implements Serializable {
         return count;
     }
 
-    public int sum(int a, int b){
-        int c = a+b;
-        return c;
-
+    public void delChar(){
+        str_count=str_count.substring(0,str_count.length()-1);
     }
+    public int sum(int a, int b){
+        count = a+b;
+        return count;
+    }
+    public int min(int a, int b){
+        count = a-b;
+        return count;
+    }
+    public int multip(int a, int b){
+        count = a*b;
+        return count;
+    }
+    public int div(int a, int b){
+        count = a/b;
+        return count;
+    }
+
 
 
 

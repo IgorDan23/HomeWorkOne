@@ -20,9 +20,16 @@ public class MainActivityCalculator extends AppCompatActivity  implements View.O
     Button btn_seven;
     Button btn_eight;
     Button btn_nine;
-    Button bnt_plus;
-    Button bnt_equals;
+    Button btn_plus;
+    Button btn_equals;
+    Button btn_erase;
+    Button btn_clean;
+    Button btn_minus;
+    Button btn_multiply;
+    Button btn_divide;
+
     TextView textView;
+    String action = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +51,14 @@ public class MainActivityCalculator extends AppCompatActivity  implements View.O
         btn_seven=findViewById(R.id.Seven);
         btn_eight=findViewById(R.id.Eight);
         btn_nine=findViewById(R.id.Nine);
-        bnt_plus=findViewById(R.id.Plus);
-        bnt_equals=findViewById(R.id.Equals);
+        btn_plus=findViewById(R.id.Plus);
+        btn_equals=findViewById(R.id.Equals);
+        btn_erase=findViewById(R.id.Erase);
+        btn_clean=findViewById(R.id.Clean);
+        btn_minus=findViewById(R.id.Minus);
+        btn_multiply=findViewById(R.id.Multiply);
+        btn_divide=findViewById(R.id.Divide);
+
         textView=findViewById(R.id.text);
         btn_zero.setOnClickListener(this);
         btn_one.setOnClickListener(this);
@@ -57,21 +70,30 @@ public class MainActivityCalculator extends AppCompatActivity  implements View.O
         btn_seven.setOnClickListener(this);
         btn_eight.setOnClickListener(this);
         btn_nine.setOnClickListener(this);
-        bnt_plus.setOnClickListener(this);
-        bnt_equals.setOnClickListener(this);
+        btn_plus.setOnClickListener(this);
+        btn_erase.setOnClickListener(this);
+        btn_equals.setOnClickListener(this);
+        btn_clean.setOnClickListener(this);
+        btn_minus.setOnClickListener(this);
+        btn_multiply.setOnClickListener(this);
+        btn_divide.setOnClickListener(this);
+
+
     }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable("Calculator",calculator);
+        outState.putString("Action",action);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         calculator=(Calculator) savedInstanceState.getSerializable("Calculator");
-        textView.setText(String.format("%d",calculator.getCount()));
+        textView.setText(calculator.getStr_count());
+        action=savedInstanceState.getString("Action");
 
     }
 
@@ -80,48 +102,140 @@ public class MainActivityCalculator extends AppCompatActivity  implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.Zero): {
-                 textView.setText(String.format("%d",calculator.getZero()));
+                 calculator.setStr_count(calculator.getStr_count().concat(calculator.getZero()));
+                 textView.setText(calculator.getStr_count());
                  break;
          }
             case (R.id.One): {
-                textView.setText(String.format("%d",calculator.getOne()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getOne()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Two): {
-                textView.setText(String.format("%d",calculator.getTwo()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getTwo()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Three): {
-                textView.setText(String.format("%d",calculator.getThree()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getThree()));
+                textView.setText(calculator.getStr_count());;
                 break;
             }
             case (R.id.Four): {
-                textView.setText(String.format("%d",calculator.getFour()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getFour()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Five): {
-                textView.setText(String.format("%d",calculator.getFive()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getFive()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Six): {
-                textView.setText(String.format("%d",calculator.getSix()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getSix()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Seven): {
-                textView.setText(String.format("%d",calculator.getSeven()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getSeven()));
+                textView.setText(calculator.getStr_count());
                 break;
             }
             case (R.id.Eight): {
-                textView.setText(String.format("%d",calculator.getEight()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getEight()));
+                textView.setText(calculator.getStr_count());;
                 break;
             }
             case (R.id.Nine): {
-                textView.setText(String.format("%d",calculator.getNine()));
+                calculator.setStr_count(calculator.getStr_count().concat(calculator.getNine()));
+                textView.setText(calculator.getStr_count());;
                 break;
+            }
+            case (R.id.Erase): {
+                if (calculator.getStr_count().length()!=0){
+                calculator.delChar();}
+                textView.setText(calculator.getStr_count());
+                break;
+            }
+            case (R.id.Clean): {
+                calculator.setQ(0);
+                textView.setText("");
+                calculator.setStr_count("");
+                action="";
+                break;
+            }
+            case (R.id.Plus): {
+                if (calculator.getStr_count().length()!=0){
+                calculator.setQ(Integer.parseInt((String) textView.getText()));
+                textView.setText("");
+                calculator.setStr_count("");
+                action="+";}
+                break;
+            }
+            case (R.id.Minus): {
+                if (calculator.getStr_count().length()!=0){
+                calculator.setQ(Integer.parseInt((String) textView.getText()));
+                textView.setText("");
+                calculator.setStr_count("");
+                action="-";}
+                break;
+            }
+            case (R.id.Multiply): {
+                if (calculator.getStr_count().length()!=0){
+                calculator.setQ(Integer.parseInt((String) textView.getText()));
+                textView.setText("");
+                calculator.setStr_count("");
+                action="x";}
+                break;
+            }
+            case (R.id.Divide): {
+                if (calculator.getStr_count().length()!=0){
+                calculator.setQ(Integer.parseInt((String) textView.getText()));
+                textView.setText("");
+                calculator.setStr_count("");
+                action="/";}
+                break;
+            }
+            case (R.id.Equals): {
+
+                if (action.equals("+")) {
+                    int d=Integer.parseInt((String) textView.getText());
+                    int c = calculator.sum(calculator.getQ(), d);
+                    calculator.setStr_count(String.valueOf(c));
+                    textView.setText(calculator.getStr_count());
+                    action="";
+                    break;
+                } else if (action.equals("-")){
+                    int d=Integer.parseInt((String) textView.getText());
+                    int c = calculator.min(calculator.getQ(), d);
+                    calculator.setStr_count(String.valueOf(c));
+                    textView.setText(calculator.getStr_count());
+                    action="";
+                    break;
+                } else if (action.equals("x")){
+                    int d=Integer.parseInt((String) textView.getText());
+                    int c = calculator.multip(calculator.getQ(), d);
+                    calculator.setStr_count(String.valueOf(c));
+                    textView.setText(calculator.getStr_count());
+                    action="";
+                    break;
+                } else if (action.equals("/")){
+                    int d=Integer.parseInt((String) textView.getText());
+                    int c = calculator.div(calculator.getQ(), d);
+                    calculator.setStr_count(String.valueOf(c));
+                    textView.setText(calculator.getStr_count());
+                    action="";
+                    break;
+                }else {
+                    calculator.setStr_count("");
+                    textView.setText(calculator.getStr_count());
+                }
+
             }
             default: {
 
             }
+
         }
 
     }
