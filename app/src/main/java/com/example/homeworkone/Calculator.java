@@ -3,15 +3,13 @@ package com.example.homeworkone;
 import java.io.Serializable;
 
 public class Calculator implements Serializable {
-    private String str_count="";
+    private String str_count = "";
     private int count;
     private int q;
 
 
-
     private String zero = "0";
     private String one = "1";
-
 
 
     private String two = "2";
@@ -84,27 +82,29 @@ public class Calculator implements Serializable {
         return count;
     }
 
-    public void delChar(){
-        str_count=str_count.substring(0,str_count.length()-1);
+    public void delChar() {
+        str_count = str_count.substring(0, str_count.length() - 1);
     }
-    public int sum(int a, int b){
-        count = a+b;
-        return count;
-    }
-    public int min(int a, int b){
-        count = a-b;
-        return count;
-    }
-    public int multip(int a, int b){
-        count = a*b;
-        return count;
-    }
-    public int div(int a, int b){
-        count = a/b;
+
+    public int sum(int a, int b) {
+        count = a + b;
         return count;
     }
 
+    public int min(int a, int b) {
+        count = a - b;
+        return count;
+    }
 
+    public int multip(int a, int b) {
+        count = a * b;
+        return count;
+    }
+
+    public int div(int a, int b) {
+        count = a / b;
+        return count;
+    }
 
 
 }

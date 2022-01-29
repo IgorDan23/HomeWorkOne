@@ -30,10 +30,10 @@
 
 
     <Button
-        android:backgroundTint="#ffd700"
         android:id="@+id/Plus"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Plus"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,9 +119,9 @@
 
     <Button
         android:id="@+id/Erase"
-        android:backgroundTint="#e34234"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:backgroundTint="#e34234"
         android:text="@string/Erase"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Eight"
@@ -132,10 +132,10 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
-        android:backgroundTint="#ffd700"
         android:id="@+id/Minus"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Minus"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Erase"
@@ -144,10 +144,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:backgroundTint="#ffd700"
         android:id="@+id/Multiply"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Multiply"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Seven"
@@ -172,10 +172,10 @@
         app:layout_constraintTop_toBottomOf="@+id/One" />
 
     <Button
-        android:backgroundTint="#ffd700"
         android:id="@+id/Divide"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Divide"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Nine"
@@ -223,9 +223,9 @@
 
     <Button
         android:id="@+id/Clean"
-        android:backgroundTint="#e34234"
         android:layout_width="80dp"
         android:layout_height="50dp"
+        android:backgroundTint="#e34234"
         android:text="@string/Clean"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -236,9 +236,9 @@
 
     <Button
         android:id="@+id/Equals"
-        android:backgroundTint="#24a319"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:backgroundTint="#24a319"
         android:text="@string/Equals"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
