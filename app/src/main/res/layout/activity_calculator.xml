@@ -16,6 +16,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fon" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выбрать тему:"
+        android:background="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2">
+
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/Theme_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/Theme_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/Theme_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+
+
+
 
     <TextView
         android:id="@+id/text"
@@ -179,8 +223,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Eight"
         style="@style/MyTheme"
-        android:text="@string/Eight"
 
+        android:text="@string/Eight"
         app:layout_constraintBottom_toTopOf="@+id/Five"
         app:layout_constraintEnd_toStartOf="@+id/Nine"
         app:layout_constraintHorizontal_bias="0.5"

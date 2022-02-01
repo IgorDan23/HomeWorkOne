@@ -28,12 +28,16 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
     Button btn_multiply;
     Button btn_divide;
 
+
     TextView textView;
     String action = "";
+
+    static int Theme=R.style.Theme_HomeWorkOne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(Theme);
         setContentView(R.layout.activity_calculator);
         in_elem();
         Set_Btn();
@@ -58,6 +62,10 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         btn_multiply = findViewById(R.id.Multiply);
         btn_divide = findViewById(R.id.Divide);
         textView = findViewById(R.id.text);
+
+        findViewById(R.id.Theme_one).setOnClickListener(this);
+        findViewById(R.id.Theme_two).setOnClickListener(this);
+        findViewById(R.id.Theme_three).setOnClickListener(this);
     }
 
     private void Set_Btn() {
@@ -238,6 +246,21 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
                     textView.setText(calculator.getStr_count());
                 }
 
+            }
+            case (R.id.Theme_one): {
+                Theme=R.style.Theme_HomeWorkOne;
+                recreate();
+                break;
+            }
+            case (R.id.Theme_two): {
+                Theme=R.style.myThemeBlue;
+                recreate();
+                break;
+            }
+            case (R.id.Theme_three): {
+                Theme=R.style.myThemeGreen;
+                recreate();
+                break;
             }
             default: {
 
