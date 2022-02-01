@@ -1,5 +1,6 @@
 package com.example.homeworkone;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,12 +33,13 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
     TextView textView;
     String action = "";
 
-    static int Theme=R.style.Theme_HomeWorkOne;
+    private static final String PREF_NAME = "key_pref";
+    private static final String PREF_THEME_KEY = "key_pref_theme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(Theme);
+        setTheme(getAppTheme());
         setContentView(R.layout.activity_calculator);
         in_elem();
         Set_Btn();
@@ -248,17 +250,17 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
 
             }
             case (R.id.Theme_one): {
-                Theme=R.style.Theme_HomeWorkOne;
+                setAppTheme(R.style.Theme_HomeWorkOne);
                 recreate();
                 break;
             }
             case (R.id.Theme_two): {
-                Theme=R.style.myThemeBlue;
+                setAppTheme(R.style.myThemeBlue);
                 recreate();
                 break;
             }
             case (R.id.Theme_three): {
-                Theme=R.style.myThemeGreen;
+                setAppTheme(R.style.myThemeGreen);
                 recreate();
                 break;
             }
@@ -270,4 +272,15 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
 
     }
 
+    protected void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(PREF_THEME_KEY, codeStyle);
+        editor.apply();
+    }
+
+    protected int getAppTheme() {
+        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        return sharedPref.getInt(PREF_THEME_KEY, R.style.Theme_HomeWorkOne);
+    }
 }

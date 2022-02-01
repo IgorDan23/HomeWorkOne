@@ -23,4 +23,8 @@
     <string name="Five">5</string>
     <string name="Clean">AC</string>
     <string name="Equals">=</string>
+    <string name="Change_theme">Выбрать тему:</string>
+    <string name="Standart_Theme">Стандартная</string>
+    <string name="Blue_Theme">Голубая</string>
+    <string name="Green_Theme">Зеленая</string>
 </resources>

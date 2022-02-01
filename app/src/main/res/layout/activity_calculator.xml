@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,8 +18,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выбрать тему:"
         android:background="@color/white"
+        android:text="@string/Change_theme"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,9 +28,9 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/text"
@@ -43,22 +42,22 @@
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/Theme_one"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Standart_Theme" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/Theme_two"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Blue_Theme" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/Theme_three"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/Green_Theme" />
 
     </RadioGroup>
-
-
-
 
 
     <TextView
@@ -270,7 +269,6 @@
         android:id="@+id/Equals"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:backgroundTint="#24a319"
         android:text="@string/Equals"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
