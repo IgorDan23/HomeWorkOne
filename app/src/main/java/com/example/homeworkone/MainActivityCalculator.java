@@ -36,8 +36,7 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         in_elem();
-
-
+        Set_Btn();
     }
 
     private void in_elem() {
@@ -58,8 +57,10 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         btn_minus = findViewById(R.id.Minus);
         btn_multiply = findViewById(R.id.Multiply);
         btn_divide = findViewById(R.id.Divide);
-
         textView = findViewById(R.id.text);
+    }
+
+    private void Set_Btn() {
         btn_zero.setOnClickListener(this);
         btn_one.setOnClickListener(this);
         btn_two.setOnClickListener(this);
@@ -77,8 +78,6 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         btn_minus.setOnClickListener(this);
         btn_multiply.setOnClickListener(this);
         btn_divide.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -247,4 +246,5 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         }
 
     }
+
 }

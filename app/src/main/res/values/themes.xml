@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyTheme" >
+        <item name="fontFamily">"@font/cabin_sketch"</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">@dimen/Button_textSize</item>
+
+    </style>
+
+
 </resources>
