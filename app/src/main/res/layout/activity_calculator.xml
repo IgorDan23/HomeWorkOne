@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#D2FFFFFF"
         android:text="@string/Change_theme"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -30,7 +30,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#D2FFFFFF"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/text"
@@ -49,13 +49,15 @@
             android:id="@+id/Theme_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Blue_Theme" />
+            android:text="@string/Blue_Theme"
+            android:textColor="@color/blue" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/Theme_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Green_Theme" />
+            android:text="@string/Green_Theme"
+            android:textColor="@color/green" />
 
     </RadioGroup>
 
