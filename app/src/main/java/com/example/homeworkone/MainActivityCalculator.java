@@ -1,12 +1,15 @@
 package com.example.homeworkone;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivityCalculator extends AppCompatActivity implements View.OnClickListener {
@@ -28,13 +31,15 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
     Button btn_minus;
     Button btn_multiply;
     Button btn_divide;
+    Button btn_setTheme;
+
+    private static final String PREF_NAME = "key_pref";
+    private static final String PREF_THEME_KEY = "key_pref_theme";
 
 
     TextView textView;
     String action = "";
 
-    private static final String PREF_NAME = "key_pref";
-    private static final String PREF_THEME_KEY = "key_pref_theme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,7 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_calculator);
         in_elem();
         Set_Btn();
+
     }
 
     private void in_elem() {
@@ -64,10 +70,8 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         btn_multiply = findViewById(R.id.Multiply);
         btn_divide = findViewById(R.id.Divide);
         textView = findViewById(R.id.text);
+        btn_setTheme = findViewById(R.id.SetTheme);
 
-        findViewById(R.id.Theme_one).setOnClickListener(this);
-        findViewById(R.id.Theme_two).setOnClickListener(this);
-        findViewById(R.id.Theme_three).setOnClickListener(this);
     }
 
     private void Set_Btn() {
@@ -88,6 +92,7 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
         btn_minus.setOnClickListener(this);
         btn_multiply.setOnClickListener(this);
         btn_divide.setOnClickListener(this);
+        btn_setTheme.setOnClickListener(this);
     }
 
     @Override
@@ -246,41 +251,43 @@ public class MainActivityCalculator extends AppCompatActivity implements View.On
                 } else {
                     calculator.setStr_count("");
                     textView.setText(calculator.getStr_count());
+                    break;
                 }
 
             }
-            case (R.id.Theme_one): {
-                setAppTheme(R.style.Theme_HomeWorkOne);
-                recreate();
-                break;
-            }
-            case (R.id.Theme_two): {
-                setAppTheme(R.style.myThemeBlue);
-                recreate();
-                break;
-            }
-            case (R.id.Theme_three): {
-                setAppTheme(R.style.myThemeGreen);
-                recreate();
+            case (R.id.SetTheme): {
+                Intent intent = new Intent(MainActivityCalculator.this, SetTheme.class);
+                startActivityForResult(intent, 123);
+
                 break;
             }
             default: {
-
             }
-
         }
 
     }
 
-    protected void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(PREF_THEME_KEY, codeStyle);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == RESULT_OK) {
+            setAppTheme(data.getIntExtra("key", R.style.Theme_HomeWorkOne));
+            recreate();
+        }
+
+    }
+
+    protected void setAppTheme(int codestyle) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(PREF_THEME_KEY, codestyle);
         editor.apply();
     }
 
     protected int getAppTheme() {
-        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return sharedPref.getInt(PREF_THEME_KEY, R.style.Theme_HomeWorkOne);
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        return sharedPreferences.getInt(PREF_THEME_KEY, R.style.Theme_HomeWorkOne);
     }
+
+
 }
