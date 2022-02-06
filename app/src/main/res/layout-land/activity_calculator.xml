@@ -17,55 +17,16 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fon_land" />
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#D2FFFFFF"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/SetTheme"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:text="@string/Change_theme"
-        android:textSize="30sp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.095" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#D2FFFFFF"
-        android:gravity="center"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2">
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2" />
 
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/Theme_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Standart_Theme" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/Theme_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Blue_Theme"
-            android:textColor="@color/blue" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/Theme_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Green_Theme"
-            android:textColor="@color/green" />
-
-    </RadioGroup>
 
     <TextView
         android:id="@+id/text"
