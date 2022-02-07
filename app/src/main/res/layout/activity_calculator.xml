@@ -18,10 +18,10 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/Button_theme_width"
+        android:layout_height="@dimen/Button_theme_height"
         android:background="@color/white"
-        android:textSize="30sp"
+        android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Plus"
         app:layout_constraintEnd_toEndOf="@+id/appCompatImageView2"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +29,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/SetTheme"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/Button_theme_width"
+        android:layout_height="@dimen/Button_theme_height"
         android:text="@string/Change_theme"
         app:layout_constraintBottom_toTopOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,11 +40,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Plus"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_minusplus_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#ffd700"
         android:text="@string/Plus"
-        android:textSize="25sp"
+        android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -121,8 +121,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Erase"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#e34234"
         android:text="@string/Erase"
         android:textSize="@dimen/Button_textSize"
@@ -135,8 +135,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Minus"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_minusplus_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#ffd700"
         android:text="@string/Minus"
         android:textSize="@dimen/Button_textSize"
@@ -147,8 +147,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Multiply"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#ffd700"
         android:text="@string/Multiply"
         android:textSize="@dimen/Button_textSize"
@@ -173,8 +173,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Divide"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#ffd700"
         android:text="@string/Divide"
         android:textSize="@dimen/Button_textSize"
@@ -220,8 +220,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Clean"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_ac_width"
+        android:layout_height="@dimen/Button_height"
         android:backgroundTint="#e34234"
         android:text="@string/Clean"
         android:textSize="@dimen/Button_textSize"
@@ -233,8 +233,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Equals"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/Button_eqals_width"
+        android:layout_height="@dimen/Button_height"
         android:text="@string/Equals"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"

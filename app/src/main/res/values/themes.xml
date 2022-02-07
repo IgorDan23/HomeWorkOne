@@ -16,8 +16,8 @@
 
     <style name="MyTheme">
         <item name="android:fontFamily">@font/cabin_sketch</item>
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">@dimen/Button_width</item>
+        <item name="android:layout_height">@dimen/Button_height</item>
         <item name="android:textSize">@dimen/Button_textSize</item>
 
     </style>
