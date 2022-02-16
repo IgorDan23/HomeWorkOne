@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,11 +17,23 @@
         app:srcCompat="@drawable/fon" />
 
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/Plus"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
 
     <Button
         android:id="@+id/Plus"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Plus"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,10 +118,11 @@
         app:layout_constraintTop_toBottomOf="@+id/Divide" />
 
     <Button
-        android:id="@+id/Percent"
+        android:id="@+id/Erase"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="@string/Percent"
+        android:backgroundTint="#e34234"
+        android:text="@string/Erase"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Eight"
         app:layout_constraintEnd_toStartOf="@+id/Divide"
@@ -120,9 +135,10 @@
         android:id="@+id/Minus"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Minus"
         android:textSize="@dimen/Button_textSize"
-        app:layout_constraintBottom_toTopOf="@+id/Percent"
+        app:layout_constraintBottom_toTopOf="@+id/Erase"
         app:layout_constraintEnd_toStartOf="@+id/Plus"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent" />
@@ -131,10 +147,11 @@
         android:id="@+id/Multiply"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Multiply"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Seven"
-        app:layout_constraintEnd_toStartOf="@+id/Percent"
+        app:layout_constraintEnd_toStartOf="@+id/Erase"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +165,7 @@
         android:text="@string/Zero"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Comma"
+        app:layout_constraintEnd_toStartOf="@+id/Clean"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,12 +175,13 @@
         android:id="@+id/Divide"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:backgroundTint="#ffd700"
         android:text="@string/Divide"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toTopOf="@+id/Nine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Percent"
+        app:layout_constraintStart_toEndOf="@+id/Erase"
         app:layout_constraintTop_toBottomOf="@+id/Plus"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -177,7 +195,7 @@
         app:layout_constraintEnd_toStartOf="@+id/Nine"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Seven"
-        app:layout_constraintTop_toBottomOf="@+id/Percent" />
+        app:layout_constraintTop_toBottomOf="@+id/Erase" />
 
     <Button
         android:id="@+id/Two"
@@ -185,7 +203,7 @@
         android:layout_height="50dp"
         android:text="@string/Two"
         android:textSize="@dimen/Button_textSize"
-        app:layout_constraintBottom_toTopOf="@+id/Comma"
+        app:layout_constraintBottom_toTopOf="@+id/Clean"
         app:layout_constraintEnd_toStartOf="@+id/Three"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/One"
@@ -204,10 +222,11 @@
         app:layout_constraintTop_toBottomOf="@+id/Eight" />
 
     <Button
-        android:id="@+id/Comma"
-        android:layout_width="50dp"
+        android:id="@+id/Clean"
+        android:layout_width="80dp"
         android:layout_height="50dp"
-        android:text="@string/Comma"
+        android:backgroundTint="#e34234"
+        android:text="@string/Clean"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Equals"
@@ -217,15 +236,23 @@
 
     <Button
         android:id="@+id/Equals"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
+        android:backgroundTint="#24a319"
         android:text="@string/Equals"
         android:textSize="@dimen/Button_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Comma"
+        app:layout_constraintStart_toEndOf="@+id/Clean"
         app:layout_constraintTop_toBottomOf="@+id/Three" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="549dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
